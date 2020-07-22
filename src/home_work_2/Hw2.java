@@ -3,7 +3,7 @@ package home_work_2;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.util.Arrays;
 
-public class hw2 {
+public class Hw2 {
 
 
     // 1 задание
