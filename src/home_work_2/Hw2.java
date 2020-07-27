@@ -7,7 +7,7 @@ public class Hw2 {
 
 
     // 1 задание
-    public static void main(String[] args) {
+    public static void main( String[] args ) {
         int[] a = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         for (int i = 0; i < a.length; i++) {
             if (a[i] == 1) {
@@ -60,48 +60,39 @@ public class Hw2 {
         }
         System.out.println("Минимальное значение " + min);
         System.out.println("Максимальное значение " + max);
-
-        // 6 задание
-        int[] mass = {2, 2, 2, 1, 2, 2, 10, 1};
-        int p;
-        int q;
-        p = mass [0] + mass[1] + mass [2] + mass [3] + mass [4] + mass [5];
-        q = mass [6] + mass [7];
-        if (p-q==1) {
-            System.out.println("true");
-        }else{
-            System.out.println("false");
-
-        }
-        //7 задание
-        int [] y ={1,2,3};
-        int n=2;
-        if (n==1){
-            y[0] = 3;
-            y[1] = 1;
-            y[2] = 2;
-        }else if (n==2){
-            y[0]=2;
-            y[1]=3;
-            y[2]=1;
-        }else if (n==3){
-            y[0]=1;
-            y[1]=2;
-            y[2]=3;
-        }else if (n==-1) {
-            y[0]=2;
-            y[1]=3;
-            y[2]=1;
-        }else if (n==-2) {
-            y[0]=3;
-            y[1]=1;
-            y[2]=2;
-        }
-        System.out.println(Arrays.toString(y));
-
-
-        }
     }
+
+    // 6 задание
+    public static boolean checkBalans( int[] arr ) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        if (sum % 2 != 0) {
+            return false;
+        }
+        int sumLeft = 0;
+        int i = 0;
+        while (sumLeft < sum) {
+            sumLeft += arr[i];
+            i++;
+        }
+        return sumLeft == sum / 2;
+    }
+    public static int[] shifyArr (int[] arr,int n){
+    int k = n%arr.length+arr.length;
+        for (int i = 0; i <k ; i++) {
+            int tmp = arr[arr.length-1];
+            for (int j = arr.length; j > 0; j--){
+                arr[0]=arr[j-1];
+            }
+            arr[0]=tmp;
+        }
+    return arr;
+    }
+}
+
+
 
 
 
